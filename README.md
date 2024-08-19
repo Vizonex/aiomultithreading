@@ -28,3 +28,26 @@ cpu count.
 Use hashcat if your trying to grind those kinds of things out.
 
 
+# Example
+
+```python
+from aiomultithreading import MultiPool
+import asyncio 
+
+async def sleep(i:float):
+    await asyncio.sleep(i)
+    return f"slept for {i}"
+
+async def main():
+    # 2 processes and 6 threads...
+    async with MultiPool(2, 6) as pool:
+        # You can go extremely fast with even 500 of these stacked together...
+        x = [i for i in range(5)] * 100
+        print(x)
+        async for text in pool.map(sleep, x):
+            print(text)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
