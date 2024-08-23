@@ -15,10 +15,10 @@ dependencies = [
     "aiomultiprocess",
 ]
 
-[project.urls]
-"Homepage" = "/aiomultithreading"
-"Source" = "/aiomultithreading"
-"Bug Reports" = "/aiomultithreading/issues"
+# [project.urls]
+# "Homepage" = "/aiomultithreading"
+# "Source" = "/aiomultithreading"
+# "Bug Reports" = "/aiomultithreading/issues"
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
