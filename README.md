@@ -1,9 +1,20 @@
-# Aiomultithreading
+# aiomultithreading:
+[![PyPI version](https://badge.fury.io/py/aiomultithreading.svg)](https://badge.fury.io/py/aiomultithreading)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/aiomultithreading)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Tests](/aiomultithreading/actions/workflows/tests.yml/badge.svg)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
+## What is it?
+
+**aiomultithreading** is
 
 A concept for creating the Best Possible Utilization of threading, multiprocessing and asyncio combined into one
 executor allowing the number of tasks running in parallel to be multiplied rapidly without 
 having to do very many setups. 
-
 
 Aiomultithreading is meant for handling super bulky tasks such as proxy-enumeration or networking
 on a very large scale. This can be costly for some uneducated programmers but luckily 
@@ -21,6 +32,7 @@ Even with the use of a low cpu machine when doing the math (2 processes * 4 thre
 it makes a total of 128 tasks. Theses numbers can rapidly multiply when being used pc or device using a higher 
 cpu count. 
 
+This library also has compatability for winloop and uvloop right out of the box.
 
 
 ## FYI
@@ -28,7 +40,22 @@ cpu count.
 Use hashcat if your trying to grind those kinds of things out.
 
 
-# Example
+# Usage:
+
+## Dependencies
+
+## Installing
+
+The easiest way is to install **aiomultithreading** is from PyPI using pip:
+
+```sh
+pip install aiomultithreading
+```
+
+
+## Running
+
+First, import the library.
 
 ```python
 from aiomultithreading import MultiPool
@@ -51,3 +78,6 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+
+# TODO:
+    - Optimize some more important parts

@@ -4,7 +4,5 @@ all together to deliver the highest power possible
 
 __author__ = "Vizonex"
 
+from .__version__ import __version__
 from .pool import MultiPool, ProcessWorker
-
-
-

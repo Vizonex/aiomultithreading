@@ -1,0 +1,39 @@
+[project]
+license = { file = "LICENSE" }
+name = "aiomultithreading"
+version = "0.0.1"
+description = "your_description_here"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [{ name = "", email = "" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "aiothreading",
+    "aiomultiprocess",
+]
+
+[project.urls]
+"Homepage" = "/aiomultithreading"
+"Source" = "/aiomultithreading"
+"Bug Reports" = "/aiomultithreading/issues"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--cov=test_proj"
+testpaths = ["tests"]
+
+[tool.mypy]
+mypy_path = "src"
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]

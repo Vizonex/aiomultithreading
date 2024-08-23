@@ -4,37 +4,26 @@ into one mega-beast called aiomultithreading
 
 # TODO: (Vizonex) Reorganize the imports.
 
-from multiprocessing import get_context
-from aiomultiprocess import Process
-from aiomultiprocess.pool import CHILD_CONCURRENCY, MAX_TASKS_PER_CHILD, Pool, RoundRobin
-from aiothreading import ThreadPool 
-from aiomultiprocess.types import (
-    LoopInitializer,
-    Queue,
-    QueueID,
-    TaskID,
-    TracebackStr
-)
-
-
-
+import asyncio
 import os
 import queue
-from aiothreading.scheduler import Scheduler as ThreadScheduler, RoundRobin as ThreadRoundRobin 
-from aiomultiprocess.scheduler import Scheduler
-from typing import Callable, Sequence, Any , Optional, Dict, Tuple
-import asyncio
+from multiprocessing import get_context
+from typing import Any, Callable, Dict, Optional, Sequence, Tuple
 
-from .types import  (
-    ProcessTID,
-    ThreadTID,
-    PoolTask,
-    R,
-    T
+from aiomultiprocess import Process
+from aiomultiprocess.pool import (
+    CHILD_CONCURRENCY,
+    MAX_TASKS_PER_CHILD,
+    Pool,
+    RoundRobin,
 )
+from aiomultiprocess.scheduler import Scheduler
+from aiomultiprocess.types import LoopInitializer, Queue, QueueID, TaskID, TracebackStr
+from aiothreading import ThreadPool
+from aiothreading.scheduler import RoundRobin as ThreadRoundRobin
+from aiothreading.scheduler import Scheduler as ThreadScheduler
 
-
-
+from .types import PoolTask, ProcessTID, ThreadTID
 
 
 class ProcessWorker(Process):
@@ -138,9 +127,7 @@ class ProcessWorker(Process):
                         completed += 1
                 
                 await asyncio.sleep(0.005)
-                
 
-       
 
 
 
@@ -196,8 +183,6 @@ class MultiPool(Pool):
 
         self.init()
         self._loop = asyncio.ensure_future(self.loop())
-        # From concurrent.futures.ThreadPoolExecutor
-        
 
     def create_worker(self, qid: QueueID) -> ProcessWorker:
         """

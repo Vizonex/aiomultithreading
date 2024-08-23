@@ -1,13 +1,4 @@
-from typing import (
-    Callable,
-    Dict,
-    NewType,
-    Optional,
-    Sequence,
-    Tuple,
-    TypeVar,
-)
-
+from typing import Callable, Dict, NewType, Optional, Sequence, Tuple, TypeVar
 
 ProcessTID = NewType("ProcessTID", int)
 ThreadTID = NewType("ThreadTID", int)
