@@ -37,7 +37,7 @@ This library also has compatability for winloop and uvloop right out of the box.
 
 ## FYI
 - If your goals involved some form of brute-forcing that's offline, please note that Asyncio is not the best canidate for this.
-Use hashcat if your trying to grind those kinds of things out.
+Use [hashcat](https://github.com/hashcat/hashcat) if your goal involves grinding hahes or perform any offline brute-forcing.
 
 
 # Usage:
