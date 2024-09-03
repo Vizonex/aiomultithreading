@@ -29,7 +29,7 @@ maximum amount of tasks that can be quickly ran in parallel.
 Even the default tasks per child with threading and cores will surprise you.
 
 Even with the use of a low cpu machine when doing the math (2 processes * 4 threads * 16 tasks per thread) 
-it makes a total of 128 tasks. Theses numbers can rapidly multiply when being used pc or device using a higher 
+it makes a total of 128 tasks. Theses numbers can rapidly multiply when being used with a pc or device using a higher 
 cpu count. 
 
 This library also has compatability for winloop and uvloop right out of the box.
